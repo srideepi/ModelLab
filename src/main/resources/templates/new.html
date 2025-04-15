@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Create New Accountant</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+    <script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+</head>
+<body>
+<div align="center">
+    <h1>Create New Accountant</h1>
+    <br />
+    <div class="col-sm-4">
+        <form action="#" th:action="@{/save}" th:object="${account}" method="post">
+            <div>
+                <input type="hidden" th:field="*{no}" />
+            </div>
+            <div>
+                <label class="form-label">Name</label>
+                <input type="text" th:field="*{name}" class="form-control" placeholder="Name" />
+            </div>
+            <div>
+                <label class="form-label">Savings</label>
+                <input type="number" step="0.01" th:field="*{savings}" class="form-control" placeholder="Savings" />
+            </div>
+            <div>
+                <label class="form-label">Credit</label>
+                <input type="number" step="0.01" th:field="*{credit}" class="form-control" placeholder="Credit" />
+            </div>
+            <div>
+                <label class="form-label">Debit</label>
+                <input type="number" step="0.01" th:field="*{debit}" class="form-control" placeholder="Debit" />
+            </div>
+            <div>
+                <label class="form-label">Account Type</label>
+                <input type="text" th:field="*{accType}" class="form-control" placeholder="Account Type" />
+            </div>
+            <br />
+            <div>
+                <button type="submit" class="btn btn-info">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
